@@ -45,10 +45,6 @@ if __name__ == "__main__":
             tinfoil.prepare(quiet=2, config_only=True)
             d = tinfoil.config_data
 
-        # Expand keys and run anonymous functions to get identical result to
-        # "bitbake -e"
-        d = tinfoil.finalizeData()
-
         value = None
         if args.flag:
             value = d.getVarFlag(args.variable, args.flag, expand=not args.unexpand)
